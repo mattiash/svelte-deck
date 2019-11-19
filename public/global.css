@@ -1,0 +1,64 @@
+body {
+	margin: 0;
+	font-family: Roboto;
+	font-size: 48px;
+}
+
+div.slide {
+	background-image: linear-gradient(90deg, #0055ff 50%, #0ae6be), linear-gradient(to right, RGB(255,255,255), RGB(255,255,255));
+	background-position: 0 0, 0, 10px;
+	background-size: 100% 10px, 100% 100%;
+    background-repeat: no-repeat;
+
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	align-items: center;
+	height: 100%;
+}
+
+div.slide > * {
+    flex-grow: 0;
+}
+
+h1 {
+	font-family: 'Roboto Slab';
+	word-spacing: -10%;
+	color: ni_blue;
+}
+
+div.slide > h2 {
+	margin-top: 0.5em;
+	margin-bottom: 0;
+	font-family: 'Roboto Slab';
+	font-size: 72px;
+	font-weight: bold;
+	line-height: 110%;
+	color: #0055ff;
+	text-align: center;
+	flex-grow: 0;
+}
+
+blockquote {
+	font-family: 'Roboto Mono';
+	line-height: 120%;
+	font-style: italic;
+	text-align: center;
+}
+
+ul,p,blockquote {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+.slide > div {
+	width: 100%;
+}
+
+li {
+	line-height: 150%
+}
