@@ -2,3 +2,5 @@
 node_modules
 public/bundle.*
 .vscode/settings.json
+public/global.css
+public/dummy.css

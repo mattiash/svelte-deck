@@ -4,12 +4,13 @@ import commonjs from 'rollup-plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import rollup_start_dev from './rollup_start_dev';
-import {logger, mdsvDeck} from './mdsv-processor';
-
+import {mdsvDeck} from './mdsv-processor';
+import autoPreprocess from 'svelte-preprocess';
+import sass from '@dishuostec/rollup-plugin-sass';
 
 const production = !process.env.ROLLUP_WATCH;
 
-export default {
+export default [{
 	input: 'src/main.js',
 	output: {
 		sourcemap: true,
@@ -21,27 +22,10 @@ export default {
 		svelte({
 			extensions: ['.svelte', '.md'],
 			preprocess: [
-				logger('pre'),
+				// logger('pre'),
 				mdsvDeck(),
-				{
-// 					script: ({content, attributes}) => {
-// 						return {
-// 						code: attributes && attributes.context === 'module' ? content : `import Presentation from "./Presentation.svelte";
-//   import Slide from "./Slide.svelte";
-//   import Image from "./Image.svelte";
-//   ${content}
-// `
-// 					}},
-// 					markup: ({content}) => ({
-// 						code:  `<script>
-// 						import Presentation from "./Presentation.svelte";
-//   import Slide from "./Slide.svelte";
-//   import Image from "./Image.svelte";
-//   </script>
-//   <Presentation><Slide n="1">${content}</Slide></Presentation>`
-// 					})
-				},
-				logger('post')
+				autoPreprocess(),
+				// logger('post')
 			],
 			// enable run-time checks when not in production
 			dev: !production,
@@ -51,7 +35,6 @@ export default {
 				css.write('public/bundle.css');
 			}
 		}),
-
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
 		// some cases you'll need additional configuration —
@@ -78,4 +61,15 @@ export default {
 	watch: {
 		clearScreen: false
 	}
-};
+},
+{
+	input: './src/global.scss',
+	plugins: [
+		sass({output: './public/global.css'})	
+	],
+	output: {
+		file: './public/dummy.css',
+		format: 'cjs'
+	}
+}
+];

@@ -1,3 +1,8 @@
+@use '~modern-css-reset/dist/reset.min.css';
+
+$primary1: #0055ff;
+$primary2: #0ae6be;
+
 body {
 	margin: 0;
 	font-family: Roboto;
@@ -5,7 +10,7 @@ body {
 }
 
 div.slide {
-	background-image: linear-gradient(90deg, #0055ff 50%, #0ae6be), linear-gradient(to right, RGB(255,255,255), RGB(255,255,255));
+	background-image: linear-gradient(90deg, $primary1 50%, $primary2), linear-gradient(to right, RGB(255,255,255), RGB(255,255,255));
 	background-position: 0 0, 0, 10px;
 	background-size: 100% 10px, 100% 100%;
     background-repeat: no-repeat;
@@ -34,7 +39,7 @@ div.slide > h2 {
 	font-size: 72px;
 	font-weight: bold;
 	line-height: 110%;
-	color: #0055ff;
+	color: $primary1;
 	text-align: center;
 	flex-grow: 0;
 }
