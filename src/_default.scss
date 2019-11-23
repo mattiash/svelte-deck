@@ -1,5 +1,7 @@
 $primary1: #0055ff;
+$primary1_light: #b2ccff;
 $primary2: #0ae6be;
+$primary2_light: #b6f8ec;
 
 body {
 	font-family: Roboto;
@@ -43,16 +45,27 @@ div.title {
 }
 
 div.section {
-    background-color: grey;
-    /* background-color: colors[color].background; */
     h1 {
         font-family: "Roboto Slab";
         word-spacing: -10%;
         font-weight: bold;
-        /* color: colors[color].text; */
         font-size: 3em;
         line-height: 100%;
   }
+}
+
+div.section.blue {
+    background-color: $primary1_light;
+    h1 {
+        color: $primary1;
+    }
+}
+
+div.section.green {
+    background-color: $primary2_light;
+    h1 {
+        color: $primary2;
+    }
 }
 
 blockquote {

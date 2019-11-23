@@ -1,3 +1,9 @@
+<script>
+  let className;
+
+  export { className as class };
+</script>
+
 <style>
   div.section {
     width: 100%;
@@ -25,7 +31,7 @@
   }
 </style>
 
-<div class="section">
+<div class="section {className}">
   <div class="d2">
     <div class="d3">
       <h1>

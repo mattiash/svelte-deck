@@ -9,7 +9,7 @@ Mattias Holmlund
 
 ---
 
-## Test section
+## !blue Test section
 
 ---
 
@@ -20,7 +20,7 @@ Some text
 - Bullet
 - Bullet
 - Bullet
-- 
+
 ---
 
 ### Slide 2

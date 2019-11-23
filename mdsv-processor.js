@@ -6,8 +6,18 @@ let slide = 0;
 renderer.hr = ()  => `</Slide><Slide n="${slide++}">`
 renderer.image = (href,title,text) => `<Image href="${href}"></Image>`
 renderer.heading = (text, number) => {
-    return number === 1 ? `<Title title="${text}">` : 
-    number === 2 ? `<Section>${text}</Section>` : `<h${number}>${text}</h${number}>`
+    switch(number) {
+    case 1: return `<Title title="${text}">`
+    case 2: 
+        let className = ''
+        let titleText = text
+        if(text.startsWith('!')) {
+            [,className, titleText] = text.match(/^!(\S+) (.*)/)           
+        }
+        return `<Section class="${className}">${titleText}</Section>`
+    default:
+         return `<h${number}>${text}</h${number}>`
+    }
 }
 
 export function logger(prefix) {
