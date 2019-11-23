@@ -7,13 +7,11 @@ Presentation
 
 ---
 
-<Section>
-Test section
-</Section>
+## Test section
 
 ---
 
-## Backend
+### Backend
 
 Some text
 
@@ -23,7 +21,7 @@ Some text
 - 
 ---
 
-## Slide 2
+### Slide 2
 
 > Hello
 
@@ -33,7 +31,7 @@ Some text
 
 ---
 
-## Picture this
+### Picture this
 
 ![img](https://picsum.photos/400/600)
 

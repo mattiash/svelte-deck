@@ -5,6 +5,9 @@ let slide = 0;
 
 renderer.hr = ()  => `</Slide><Slide n="${slide++}">`
 renderer.image = (href,title,text) => `<Image href="${href}"></Image>`
+renderer.heading = (text, number) => {
+    return number === 2 ? `<Section>${text}</Section>` : `<h${number}>${text}</h${number}>`
+}
 
 export function logger(prefix) {
     return 	{

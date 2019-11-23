@@ -26,7 +26,6 @@
 </style>
 
 <div class="section">
-
   <div class="d2">
     <div class="d3">
       <h1>
