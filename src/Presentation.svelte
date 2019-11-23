@@ -13,6 +13,14 @@
       overview.update(v => !v);
     }
   }
+
+  overview.subscribe(v => {
+    if (v) {
+      document.body.classList.add("overview");
+    } else {
+      document.body.classList.remove("overview");
+    }
+  });
 </script>
 
 <svelte:window on:keydown={handleKeydown} />

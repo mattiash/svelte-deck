@@ -2,6 +2,11 @@
 
 body {
 	margin: 0;
+	overflow: hidden;
+}
+
+body.overview {
+	overflow: visible;
 }
 
 div.slide {

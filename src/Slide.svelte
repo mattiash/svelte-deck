@@ -20,26 +20,37 @@
 
 <style>
   div.container {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #ddd;
-    display: none;
-  }
-
-  div.container.visible {
-    display: block;
+    transition: transform 0.4s;
   }
 
   div.container.overview {
+    position: relative;
     box-shadow: 20px 15px 8px #888;
     border: 4px solid #888;
     cursor: pointer;
+  }
+
+  .left {
+    transform: translateX(-100%);
+  }
+  .right {
+    transform: translateX(100%);
+  }
+  .visible {
+    transform: translateX(0);
   }
 </style>
 
 <div
   class="container"
-  class:visible={$overview || $activeSlide === num}
+  class:left={!$overview && $activeSlide > num}
+  class:right={!$overview && $activeSlide < num}
+  class:visible={!$overview && $activeSlide === num}
   class:overview={$overview}
   style={$overview ? `transform: ${transform}` : ''}
   on:click={click}>
