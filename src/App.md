@@ -27,3 +27,13 @@ Some text
 
 > Hello
 
+---
+
+![img](https://picsum.photos/400/600)
+
+---
+
+## Picture this
+
+![img](https://picsum.photos/400/600)
+

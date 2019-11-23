@@ -9,7 +9,8 @@
     background-position: center;
     background-color: white;
     flex-grow: 10;
-    margin-top: 0.5em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
   }
 
   div:last-child {

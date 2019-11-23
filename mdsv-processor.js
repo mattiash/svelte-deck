@@ -4,6 +4,7 @@ const renderer = Renderer();
 let slide = 0;
 
 renderer.hr = ()  => `</Slide><Slide n="${slide++}">`
+renderer.image = (href,title,text) => `<Image href="${href}"></Image>`
 
 export function logger(prefix) {
     return 	{
@@ -35,7 +36,16 @@ export function mdsvDeck() {
                 if(filename.endsWith('.md')) {
                 slide = 2
                 const mdresult = md.markup({content, filename})
-                let html = `<Presentation slides="${slide-1}"><Slide n="1">` + mdresult.code.replace(/<script/, '</Slide></Presentation><script');
+                let mdHtml = mdresult.code;
+                
+                // Make Image a direct child of Slide
+                mdHtml = mdHtml.replace(/<p><Image/g, '<Image');
+                mdHtml = mdHtml.replace(/<\/Image><\/p>/g, '</Image>');
+
+                mdHtml = mdHtml.replace(/<script/, '</Slide></Presentation><script');
+
+                let html = `<Presentation slides="${slide-1}"><Slide n="1">` + mdHtml;
+
                 if(html.match(/<script>/)) {
                     // There is already an instance-level script. Amend it.
                     html = html.replace(/<script>/, `<script>import Presentation from "./Presentation.svelte";
