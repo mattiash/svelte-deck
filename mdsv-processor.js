@@ -6,7 +6,8 @@ let slide = 0;
 renderer.hr = ()  => `</Slide><Slide n="${slide++}">`
 renderer.image = (href,title,text) => `<Image href="${href}"></Image>`
 renderer.heading = (text, number) => {
-    return number === 2 ? `<Section>${text}</Section>` : `<h${number}>${text}</h${number}>`
+    return number === 1 ? `<Title title="${text}">` : 
+    number === 2 ? `<Section>${text}</Section>` : `<h${number}>${text}</h${number}>`
 }
 
 export function logger(prefix) {
@@ -45,7 +46,11 @@ export function mdsvDeck() {
                 mdHtml = mdHtml.replace(/<p><Image/g, '<Image');
                 mdHtml = mdHtml.replace(/<\/Image><\/p>/g, '</Image>');
 
+                
                 mdHtml = mdHtml.replace(/<script/, '</Slide></Presentation><script');
+
+                // Close Title tags at end of slide
+                mdHtml = mdHtml.replace(/(<Title.*?)<\/Slide/sg, "$1</Title></Slide");
 
                 let html = `<Presentation slides="${slide-1}"><Slide n="1">` + mdHtml;
 

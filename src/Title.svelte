@@ -1,51 +1,60 @@
 <script>
-  export let date = "";
-  export let author = "";
+  export let title = "";
 </script>
 
 <style>
   div.title {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     background-size: 100% 100%;
-    padding-left: 1em;
+    padding-left: 0.5em;
     position: absolute;
     top: 0;
   }
 
-  div.d2 {
-    height: 100%;
-    position: relative;
+  .spacer {
+    flex-grow: 1;
   }
 
-  div.d3 {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+  :global(p) {
+    margin-left: 0;
+  }
+
+  /* First spacer */
+  .title div.spacer:nth-child(1) {
+    order: 1
+  }
+
+  /* First p in slot */
+  :global(p:nth-child(3)) {
+    order: 2;
   }
 
   h1 {
+    order: 3;
     margin-top: 0;
-    line-height: 100%;
+    line-height: 80%;
   }
 
-  div.author {
-    position: absolute;
-    bottom: 0.4em;
+  /* Last spacer */
+  .title div.spacer {
+    order: 4;
+  }
+
+  /* Second p in slot */
+  :global(p:nth-child(4)) {
+    order: 5;
     font-size: 0.7em;
   }
+
+
 </style>
 
 <div class="title">
-  <div class="d2">
-    <div class="d3">
-      <div>{date}</div>
-      <h1>
-        <slot />
-      </h1>
-    </div>
-    <div class="author">{author}</div>
-
-  </div>
+  <div class="spacer" />
+  <h1>{title}</h1>
+  <slot />
+  <div class="spacer" />
 </div>

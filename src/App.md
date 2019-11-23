@@ -1,9 +1,11 @@
 import Title from './Title.svelte'
 import Section from './Section.svelte'
 
-<Title date="2019-11-19" author="Mattias Holmlund">
-Presentation
-</Title>
+# Presentation
+
+Mattias Holmlund
+
+2019-11-23
 
 ---
 
