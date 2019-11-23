@@ -4,13 +4,11 @@
 </script>
 
 <style>
-  div.d1 {
+  div.title {
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, #0055ff 50%, #0ae6be);
     background-size: 100% 100%;
     padding-left: 1em;
-    color: white;
     position: absolute;
     top: 0;
   }
@@ -28,11 +26,6 @@
   }
 
   h1 {
-    font-family: Roboto Slab;
-    word-spacing: -10%;
-    font-weight: bold;
-    color: white;
-    font-size: 3em;
     margin-top: 0;
     line-height: 100%;
   }
@@ -44,7 +37,7 @@
   }
 </style>
 
-<div class="d1">
+<div class="title">
   <div class="d2">
     <div class="d3">
       <div>{date}</div>

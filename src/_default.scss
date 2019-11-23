@@ -1,0 +1,63 @@
+$primary1: #0055ff;
+$primary2: #0ae6be;
+
+body {
+	font-family: Roboto;
+	font-size: 48px;
+}
+
+div.slide {
+	background-image: linear-gradient(90deg, $primary1 50%, $primary2), linear-gradient(to right, RGB(255,255,255), RGB(255,255,255));
+	background-position: 0 0, 0, 10px;
+	background-size: 100% 10px, 100% 100%;
+    background-repeat: no-repeat;
+}
+
+h1 {
+	font-family: 'Roboto Slab';
+	word-spacing: -10%;
+	color: $primary1;
+}
+
+div.slide {
+    h2 {
+        font-family: 'Roboto Slab';
+        font-size: 72px;
+        font-weight: bold;
+        line-height: 110%;
+        color: $primary1;
+    }
+} 
+
+div.title {
+    background: linear-gradient(90deg, $primary1 50%, $primary2);
+    color: white;
+
+    h1 {
+        font-family: Roboto Slab;
+        word-spacing: -10%;
+        font-weight: bold;
+        color: white;
+        font-size: 3em;
+    }
+}
+
+div.section {
+    background-color: grey;
+    /* background-color: colors[color].background; */
+    h1 {
+        font-family: "Roboto Slab";
+        word-spacing: -10%;
+        font-weight: bold;
+        /* color: colors[color].text; */
+        font-size: 3em;
+        line-height: 100%;
+  }
+}
+
+blockquote {
+	font-family: 'Roboto Mono';
+	line-height: 120%;
+	font-style: italic;
+	text-align: center;
+}
