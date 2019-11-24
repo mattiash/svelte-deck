@@ -45,4 +45,10 @@ li {
 	line-height: 150%;
 }
 
+@media print {
+	body {
+		overflow: visible;
+	}
+}
+
 @import "default";

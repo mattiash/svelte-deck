@@ -10,8 +10,6 @@
     height: 100%;
     background-size: 100% 100%;
     padding-left: 1em;
-    position: absolute;
-    top: 0;
   }
 
   div.d2 {

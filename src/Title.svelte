@@ -10,8 +10,6 @@
     height: 100%;
     background-size: 100% 100%;
     padding-left: 0.5em;
-    position: absolute;
-    top: 0;
   }
 
   .spacer {

@@ -19,14 +19,6 @@
 </script>
 
 <style>
-  div.container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    transition: transform 0.4s;
-  }
 
   div.container.overview {
     position: relative;
@@ -34,15 +26,53 @@
     border: 4px solid #888;
     cursor: pointer;
   }
+  
+  @media screen {
+    div.container {
+      width: 100vw;
+      height: 100vh;
+    }
 
-  .left {
-    transform: translateX(-100%);
+    div.container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: transform 0.4s;
+    }
+    .left {
+      transform: translateX(-100%);
+    }
+    .right {
+      transform: translateX(100%);
+    }
+    .visible {
+      transform: translateX(0);
+    }
   }
-  .right {
-    transform: translateX(100%);
+
+  @page {
+    margin: 1cm;
+    size: landscape;
   }
-  .visible {
-    transform: translateX(0);
+
+  @page :footer {
+    display: none;
+  }
+
+  @page :header {
+    display: none;
+  }
+
+  @media print {
+    div.container {
+      width: 100vw;
+      height: 100vh;
+      page-break-after: always;
+    }
+
+    div.container:last-child {
+      page-break-after: avoid;
+    }
   }
 </style>
 
