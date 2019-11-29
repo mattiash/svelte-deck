@@ -24,6 +24,8 @@
       document.body.classList.remove("overview");
     }
   });
+
+  activeSlide.subscribe( v => window.location.hash = v)
 </script>
 
 <svelte:window on:keydown={handleKeydown} />
