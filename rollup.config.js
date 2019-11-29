@@ -25,7 +25,7 @@ export default [{
 				// logger('pre'),
 				mdsvDeck(),
 				autoPreprocess(),
-				logger('post')
+				// logger('post')
 			],
 			// enable run-time checks when not in production
 			dev: !production,
