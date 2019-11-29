@@ -22,7 +22,13 @@ div.slide {
 }
 
 div.slide > * {
-    flex-grow: 0;
+	flex-grow: 0;
+}
+
+div.slide > p {
+	margin-left: 1em;
+	margin-right: 1em;
+	text-align: center;
 }
 
 div.slide > h3 {
@@ -37,8 +43,6 @@ ul,p,blockquote {
 	flex-direction: column;
 	justify-content: center;
 	margin: 0;
-	margin-left: 1em;
-	margin-right: 1em;
 }
 
 .slide > div {

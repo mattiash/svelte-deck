@@ -12,10 +12,6 @@
     padding-left: 0.5em;
   }
 
-  :global(p) {
-    margin-left: 0;
-  }
-
   /* First spacer */
   .title div.spacer:nth-child(1) {
     flex-grow: 2;

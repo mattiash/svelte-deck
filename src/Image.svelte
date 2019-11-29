@@ -7,7 +7,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: white;
+    background-color: transparent;
     flex-grow: 10;
     margin-top: 0.2em;
     margin-bottom: 0.2em;

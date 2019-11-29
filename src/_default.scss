@@ -8,14 +8,12 @@ $bodyFont: "Gill sans";
 
 body {
 	font-family: $bodyFont;
-	font-size: 48px;
+    font-size: 48px;
+    color: #444444
 }
 
 div.slide {
-	background-image: linear-gradient(90deg, $primary1 50%, $primary2), linear-gradient(to right, RGB(255,255,255), RGB(255,255,255));
-	background-position: 0 0, 0, 10px;
-	background-size: 100% 10px, 100% 100%;
-    background-repeat: no-repeat;
+	background-image: linear-gradient( #e5e5e5 0%, #f0f0f0 16%, #ffffff 100%);
 
     h3 {
         font-family: $headlineFont;
