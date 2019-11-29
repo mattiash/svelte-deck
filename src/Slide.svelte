@@ -5,6 +5,8 @@
   let translateX;
   let translateY;
   let transform;
+  let slideElem;
+
   $: {
     num = parseInt(n);
     const f = 111.111
@@ -17,15 +19,33 @@
     activeSlide.update(() => parseInt(num));
     overview.update(() => false);
   }
+
+  overview.subscribe( v => {
+    if(v && num === $activeSlide) {
+      setTimeout( () => slideElem.scrollIntoView({behavior: 'smooth', block: 'center'}), 450)
+    }
+  })
+
+  activeSlide.subscribe( v => {
+    if(v && num === $activeSlide) {
+      slideElem.scrollIntoView({behavior: 'smooth', block: 'center'})
+    }
+
+  })
 </script>
 
 <style>
 
   div.container.overview {
+    box-sizing: content-box;
     position: relative;
     box-shadow: 20px 15px 8px #888;
-    border: 4px solid #888;
+    border: 8px solid #888;
     cursor: pointer;
+  }
+
+  div.container.overview.selected {
+    border: 8px solid red;
   }
 
   @media screen {
@@ -82,9 +102,12 @@
   class:left={!$overview && $activeSlide > num}
   class:right={!$overview && $activeSlide < num}
   class:visible={!$overview && $activeSlide === num}
+  class:selected={$overview && $activeSlide === num}
   class:overview={$overview}
   style={$overview ? `transform: ${transform}` : ''}
-  on:click={click}>
+  on:click={click}
+  bind:this={slideElem}
+  >
   <div class="slide">
     <slot />
     <div />

@@ -9,12 +9,23 @@
       activeSlide.update(n => Math.min(n + 1, numSlides));
     } else if (event.key === "ArrowLeft") {
       activeSlide.update(n => Math.max(1, n - 1));
+    } else if ($overview && event.key === "ArrowDown") {
+      activeSlide.update(n => Math.min(n + 3, numSlides));
+    } else if ($overview && event.key === "ArrowUp") {
+      activeSlide.update(n => Math.max(1, n - 3));
     } else if (event.key === "o") {
       overview.update(v => !v);
+    } else if ($overview && event.key === "Enter") {
+      overview.update(v => false);
     }
     else if (event.key === 'f' ) {
       openFullscreen()
     }
+    else {
+      return true
+    }
+
+    return false
   }
 
   overview.subscribe(v => {
@@ -28,5 +39,5 @@
   activeSlide.subscribe( v => window.location.hash = v)
 </script>
 
-<svelte:window on:keydown={handleKeydown} />
+<svelte:window on:keydown|preventDefault={handleKeydown} />
 <slot />
