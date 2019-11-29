@@ -7,8 +7,9 @@
   let transform;
   $: {
     num = parseInt(n);
-    translateX = [-110, 0, 110][(num - 1) % 3];
-    translateY = -110 + 110 * Math.floor((num - 1) / 3) - 330 * (num - 1);
+    const f = 111.111
+    translateX = [-f, 0, f][(num - 1) % 3];
+    translateY = -f + f * Math.floor((num - 1) / 3) - 3*f * (num - 1);
     transform = `scale(0.3) translate(${translateX}%, ${translateY}%)`;
   }
 
@@ -26,7 +27,7 @@
     border: 4px solid #888;
     cursor: pointer;
   }
-  
+
   @media screen {
     div.container {
       width: 100vw;
