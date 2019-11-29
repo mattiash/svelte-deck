@@ -12,17 +12,14 @@
     padding-left: 0.5em;
   }
 
-  .spacer {
-    flex-grow: 1;
-  }
-
   :global(p) {
     margin-left: 0;
   }
 
   /* First spacer */
   .title div.spacer:nth-child(1) {
-    order: 1
+    flex-grow: 2;
+    order: 1;
   }
 
   /* First p in slot */
@@ -32,12 +29,12 @@
 
   h1 {
     order: 3;
-    margin-top: 0;
-    line-height: 80%;
+    margin: 0;
   }
 
   /* Last spacer */
   .title div.spacer {
+    flex-grow: 1;
     order: 4;
   }
 

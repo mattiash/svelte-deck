@@ -1,4 +1,8 @@
-@use '~modern-css-reset/dist/reset.min.css';
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
 	margin: 0;

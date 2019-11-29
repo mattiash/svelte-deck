@@ -32,9 +32,9 @@
 <div class="section {className}">
   <div class="d2">
     <div class="d3">
-      <h1>
+      <h2>
         <slot />
-      </h1>
+      </h2>
     </div>
   </div>
 </div>

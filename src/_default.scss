@@ -3,8 +3,11 @@ $primary1_light: #b2ccff;
 $primary2: #0ae6be;
 $primary2_light: #b6f8ec;
 
+$headlineFont: "Rockwell";
+$bodyFont: "Gill sans";
+
 body {
-	font-family: Roboto;
+	font-family: $bodyFont;
 	font-size: 48px;
 }
 
@@ -13,20 +16,11 @@ div.slide {
 	background-position: 0 0, 0, 10px;
 	background-size: 100% 10px, 100% 100%;
     background-repeat: no-repeat;
-}
 
-h1 {
-	font-family: 'Roboto Slab';
-	word-spacing: -10%;
-	color: $primary1;
-}
-
-div.slide {
     h3 {
-        font-family: 'Roboto Slab';
+        font-family: $headlineFont;
         font-size: 72px;
         font-weight: bold;
-        line-height: 110%;
         color: $primary1;
     }
 } 
@@ -36,8 +30,7 @@ div.title {
     color: white;
 
     h1 {
-        font-family: Roboto Slab;
-        word-spacing: -10%;
+        font-family: $headlineFont;
         font-weight: bold;
         color: white;
         font-size: 3em;
@@ -45,8 +38,8 @@ div.title {
 }
 
 div.section {
-    h1 {
-        font-family: "Roboto Slab";
+    h2 {
+        font-family: $headlineFont;
         word-spacing: -10%;
         font-weight: bold;
         font-size: 3em;
@@ -56,21 +49,16 @@ div.section {
 
 div.section.blue {
     background-color: $primary1_light;
-    h1 {
-        color: $primary1;
-    }
+    color: $primary1;
 }
 
 div.section.green {
     background-color: $primary2_light;
-    h1 {
-        color: $primary2;
-    }
+    color: $primary2;
 }
 
 blockquote {
-	font-family: 'Roboto Mono';
-	line-height: 120%;
+	font-family: $bodyFont;
 	font-style: italic;
 	text-align: center;
 }
