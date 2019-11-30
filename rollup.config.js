@@ -5,7 +5,6 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import rollup_start_dev from './util/rollup_start_dev';
 import {mdsvDeck, logger} from './util/mdsv-processor';
-import autoPreprocess from 'svelte-preprocess';
 import sass from '@dishuostec/rollup-plugin-sass';
 
 const production = !process.env.ROLLUP_WATCH;
@@ -24,7 +23,6 @@ export default [{
 			preprocess: [
 				// logger('pre'),
 				mdsvDeck(),
-				autoPreprocess(),
 				logger('post')
 			],
 			// enable run-time checks when not in production

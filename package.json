@@ -13,12 +13,9 @@
   },
   "dependencies": {
     "@dishuostec/rollup-plugin-sass": "^1.2.3",
-    "modern-css-reset": "^1.0.4",
-    "node-sass": "^4.13.0",
     "puppeteer": "^2.0.0",
     "sass": "^1.23.7",
-    "sirv-cli": "^0.4.5",
-    "svelte-preprocess": "^3.2.6"
+    "sirv-cli": "^0.4.5"
   },
   "scripts": {
     "build": "rollup -c",
