@@ -1,5 +1,3 @@
-import Title from './Title.svelte'
-import Section from './Section.svelte'
 
 # Presentation
 

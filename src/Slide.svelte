@@ -27,7 +27,7 @@
   })
 
   activeSlide.subscribe( v => {
-    if(v && num === $activeSlide) {
+    if($overview && num === v) {
       slideElem.scrollIntoView({behavior: 'smooth', block: 'center'})
     }
 

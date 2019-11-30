@@ -1,4 +1,4 @@
-import App from './App.md';
+import App from '../Slides.md';
 
 const app = new App({
 	target: document.body,

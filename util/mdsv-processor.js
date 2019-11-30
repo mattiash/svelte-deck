@@ -1,9 +1,17 @@
 import {markdown, Renderer} from 'svelte-preprocess-markdown';
 const renderer = Renderer();
 
+const imports = `
+import Presentation from "./src/Presentation.svelte";
+import Slide from "./src/Slide.svelte";
+import Image from "./src/Image.svelte";
+import Title from "./src/Title.svelte";
+import Section from "./src/Section.svelte";
+`;
+
 let slide = 0;
 
-renderer.hr = ()  => `</Slide><Slide n="${slide++}">`
+renderer.hr = ()  => `</Slide>\n<Slide n="${slide++}">`
 renderer.image = (href,title,text) => `<Image href="${href}"></Image>`
 renderer.heading = (text, number) => {
     switch(number) {
@@ -23,23 +31,25 @@ renderer.heading = (text, number) => {
 export function logger(prefix) {
     return 	{
         markup: ({ content, filename }) => {
-            console.log(`=== ${prefix} markup ${filename}\n${content}\n`)
-            return {
-                code: content
-            };
+            if(filename.endsWith('.md')) {
+                console.log(`=== ${prefix} markup ${filename}\n${content}\n`)
+                return {
+                    code: content
+                };
+            }
         },
-        script: ({ content }) => {
-            console.log(`=== ${prefix} script\n${content}\n`)
-            return {
-                code: content
-            };
-        },
-        style: ({ content }) => {
-            console.log(`=== ${prefix} style\n${content}\n`)
-            return {
-                code: content
-            };
-        }
+        // script: ({ content }) => {
+        //     console.log(`=== ${prefix} script\n${content}\n`)
+        //     return {
+        //         code: content
+        //     };
+        // },
+        // style: ({ content }) => {
+        //     console.log(`=== ${prefix} style\n${content}\n`)
+        //     return {
+        //         code: content
+        //     };
+        // }
     }
 }
 
@@ -57,25 +67,20 @@ export function mdsvDeck() {
                 mdHtml = mdHtml.replace(/<\/Image><\/p>/g, '</Image>');
 
                 
-                mdHtml = mdHtml.replace(/<script/, '</Slide></Presentation><script');
+                mdHtml = mdHtml.replace(/<script/, '</Slide>\n</Presentation><script');
 
                 // Close Title tags at end of slide
                 mdHtml = mdHtml.replace(/(<Title.*?)<\/Slide/sg, "$1</Title></Slide");
 
-                let html = `<Presentation slides="${slide-1}"><Slide n="1">` + mdHtml;
+                let html = `<Presentation slides="${slide-1}">\n<Slide n="1">` + mdHtml;
 
                 if(html.match(/<script>/)) {
                     // There is already an instance-level script. Amend it.
-                    html = html.replace(/<script>/, `<script>import Presentation from "./Presentation.svelte";
-    import Slide from "./Slide.svelte";
-    import Image from "./Image.svelte";`)
+                    html = html.replace(/<script>/, `<script>${imports}`)
                 }
                 else {
                     // There is no instance-level script. Add one.
-                    console.log('Adding inline script')
-                    html = html + `<script>import Presentation from "./Presentation.svelte";
-    import Slide from "./Slide.svelte";
-    import Image from "./Image.svelte";</script>`
+                    html = html + `<script>${imports}</script>`
                 }
                 return {
                     code: html

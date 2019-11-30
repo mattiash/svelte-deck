@@ -3,8 +3,8 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
-import rollup_start_dev from './rollup_start_dev';
-import {mdsvDeck, logger} from './mdsv-processor';
+import rollup_start_dev from './util/rollup_start_dev';
+import {mdsvDeck, logger} from './util/mdsv-processor';
 import autoPreprocess from 'svelte-preprocess';
 import sass from '@dishuostec/rollup-plugin-sass';
 
@@ -25,7 +25,7 @@ export default [{
 				// logger('pre'),
 				mdsvDeck(),
 				autoPreprocess(),
-				// logger('post')
+				logger('post')
 			],
 			// enable run-time checks when not in production
 			dev: !production,
