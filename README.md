@@ -18,6 +18,7 @@ With `npm run dev` running, run `node util/print.js`
 - Arrow left / right - Previous / Next slide
 - o - Overview mode
 - c - Toggle Comments (Speaker notes)
+- a - Toggle animations (slide transitions) on/off
 
 ## Speaker notes
 

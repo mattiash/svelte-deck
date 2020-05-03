@@ -1,6 +1,6 @@
 <script>
   export let slides;
-  import { activeSlide, overview, comment } from "./stores.js";
+  import { activeSlide, overview, comment, animate } from "./stores.js";
   import { openFullscreen } from "./fullscreen.js";
   $: numSlides = parseInt(slides);
 
@@ -21,8 +21,11 @@
     } else if ($overview && event.key === "Enter") {
       overview.update(v => false);
     }
+    else if (event.key === 'a' ) {
+      animate.update(v => !v)
+    }
     else if (event.key === 'c' ) {
-      comment.update(c => !c)
+      comment.update(v => !v)
     }
     else if (event.key === 'f' ) {
       openFullscreen()

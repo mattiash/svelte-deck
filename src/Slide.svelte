@@ -1,6 +1,6 @@
 <script>
   export let n;
-  import { activeSlide, overview } from "./stores.js";
+  import { activeSlide, overview, animate } from "./stores.js";
   let num;
   let translateX;
   let translateY;
@@ -58,6 +58,9 @@
       position: absolute;
       top: 0;
       left: 0;
+    }
+
+    div.container.animate {
       transition: transform 0.4s;
     }
     .left {
@@ -104,6 +107,7 @@
   class:visible={!$overview && $activeSlide === num}
   class:selected={$overview && $activeSlide === num}
   class:overview={$overview}
+  class:animate={$animate}
   style={$overview ? `transform: ${transform}` : ''}
   on:click={click}
   bind:this={slideElem}
