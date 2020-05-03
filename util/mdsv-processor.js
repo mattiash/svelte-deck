@@ -28,6 +28,16 @@ renderer.heading = (text, number) => {
     }
 }
 
+renderer.paragraph = (text) => {
+    if(text.startsWith('::')) {
+        const comment = text.slice(2)
+        return comment.split('\n').map( t => `<p class="comment">${t}</p>`).join('')
+    }
+    else { 
+        return `<p>${text}</p>`
+    }
+}
+
 export function logger(prefix) {
     return 	{
         markup: ({ content, filename }) => {

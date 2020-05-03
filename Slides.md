@@ -19,6 +19,8 @@ Some text that is very long so that it stretches over two lines at least
 - Bullet
 - Bullet
 
+:: Speaker note aka Comment
+
 ---
 
 ### Slide 2

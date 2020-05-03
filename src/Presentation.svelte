@@ -1,6 +1,6 @@
 <script>
   export let slides;
-  import { activeSlide, overview } from "./stores.js";
+  import { activeSlide, overview, comment } from "./stores.js";
   import { openFullscreen } from "./fullscreen.js";
   $: numSlides = parseInt(slides);
 
@@ -18,6 +18,9 @@
     } else if ($overview && event.key === "Enter") {
       overview.update(v => false);
     }
+    else if (event.key === 'c' ) {
+      comment.update(c => !c)
+    }
     else if (event.key === 'f' ) {
       openFullscreen()
     }
@@ -33,6 +36,14 @@
       document.body.classList.add("overview");
     } else {
       document.body.classList.remove("overview");
+    }
+  });
+
+  comment.subscribe(v => {
+    if (v) {
+      document.body.classList.add("comment");
+    } else {
+      document.body.classList.remove("comment");
     }
   });
 

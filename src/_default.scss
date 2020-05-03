@@ -60,3 +60,29 @@ blockquote {
 	font-style: italic;
 	text-align: center;
 }
+
+p.comment {
+    display: none;
+}
+
+.comment {
+    div.title {
+    	background-image: linear-gradient( #e5e5e5 0%, #f0f0f0 16%, #ffffff 100%);
+    }
+
+    div.slide {
+        justify-content: normal;
+        align-items: start;
+
+        * {
+            display: none;
+        }
+
+        p.comment {
+            display: flex;
+            order: 1;
+            margin: 0.2em 1em;
+            text-align: left;
+        }
+    }
+}
