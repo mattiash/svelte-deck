@@ -4,4 +4,4 @@ public/bundle.*
 .vscode/settings.json
 public/global.css
 public/dummy.css
-presentation.pdf
+*.pdf
