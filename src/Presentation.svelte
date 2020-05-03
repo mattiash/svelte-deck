@@ -54,7 +54,6 @@
   });
 
   activeSlide.subscribe( v => {
-    window.location.hash = v
     chan.postMessage(v)
   });
 
