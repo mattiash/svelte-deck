@@ -4,6 +4,9 @@
   import { openFullscreen } from "./fullscreen.js";
   $: numSlides = parseInt(slides);
 
+  const chan = new BroadcastChannel('svelte-deck')
+  chan.onmessage = (event) => activeSlide.update(() => event.data)
+
   function handleKeydown(event) {
     if (event.key === "ArrowRight") {
       activeSlide.update(n => Math.min(n + 1, numSlides));
@@ -47,7 +50,11 @@
     }
   });
 
-  activeSlide.subscribe( v => window.location.hash = v)
+  activeSlide.subscribe( v => {
+    window.location.hash = v
+    chan.postMessage(v)
+  });
+
 </script>
 
 <svelte:window on:keydown|preventDefault={handleKeydown} />

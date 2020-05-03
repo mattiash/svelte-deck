@@ -22,3 +22,6 @@ With `npm run dev` running, run `node util/print.js`
 ## Speaker notes
 
 Prefix text paragraph with `::` to turn it into a comment for speaker notes
+
+If you open several browser windows with the same presentation,
+slide selection will be synchronized across windows.
