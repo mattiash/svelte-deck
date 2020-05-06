@@ -14,7 +14,7 @@
   "dependencies": {
     "@dishuostec/rollup-plugin-sass": "^1.2.3",
     "puppeteer": "^2.0.0",
-    "sass": "^1.23.7",
+    "sass": "^1.26.5",
     "sirv-cli": "^0.4.5"
   },
   "scripts": {
