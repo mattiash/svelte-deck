@@ -52,8 +52,8 @@ div.slide {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
 
     > * {
         flex-grow: 0;
@@ -86,9 +86,9 @@ div.title {
     color: black;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
-    background-size: 100% 100%;
+    width: 100vw;
+    height: 100vh;
+    background-size: 100vw 100vh;
     padding-left: 0.5em;
 
     h1 {
@@ -125,9 +125,9 @@ div.title {
 
 /* Section */
 div.section {
-    width: 100%;
-    height: 100%;
-    background-size: 100% 100%;
+    width: 100vw;
+    height: 100vh;
+    background-size: 100vw 100vh;
     padding-left: 1em;
 
     h2 {
