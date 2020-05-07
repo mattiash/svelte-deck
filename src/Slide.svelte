@@ -35,69 +35,6 @@
 </script>
 
 <style>
-
-  div.container.overview {
-    box-sizing: content-box;
-    position: relative;
-    box-shadow: 20px 15px 8px #888;
-    border: 8px solid #888;
-    cursor: pointer;
-  }
-
-  div.container.overview.selected {
-    border: 8px solid red;
-  }
-
-  @media screen {
-    div.container {
-      width: 100vw;
-      height: 100vh;
-    }
-
-    div.container {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    div.container.animate {
-      transition: transform 0.4s;
-    }
-    .left {
-      transform: translateX(-100%);
-    }
-    .right {
-      transform: translateX(100%);
-    }
-    .visible {
-      transform: translateX(0);
-    }
-  }
-
-  @page {
-    margin: 1cm;
-    size: landscape;
-  }
-
-  @page :footer {
-    display: none;
-  }
-
-  @page :header {
-    display: none;
-  }
-
-  @media print {
-    div.container {
-      width: 100vw;
-      height: 100vh;
-      page-break-after: always;
-    }
-
-    div.container:last-child {
-      page-break-after: avoid;
-    }
-  }
 </style>
 
 <div

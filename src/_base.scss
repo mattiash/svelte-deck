@@ -24,6 +24,71 @@ body {
 }
 
 /* Slide */
+
+  div.container.overview {
+    box-sizing: content-box;
+    position: relative;
+    box-shadow: 20px 15px 8px #888;
+    border: 8px solid #888;
+    cursor: pointer;
+  }
+
+  div.container.overview.selected {
+    border: 8px solid red;
+  }
+
+  @media screen {
+    div.container {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    div.container {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    div.container.animate {
+      transition: transform 0.4s;
+    }
+    .left {
+      transform: translateX(-100%);
+    }
+    .right {
+      transform: translateX(100%);
+    }
+    .visible {
+      transform: translateX(0);
+    }
+  }
+
+  @page {
+    margin: 1cm;
+    size: landscape;
+  }
+
+  @page :footer {
+    display: none;
+  }
+
+  @page :header {
+    display: none;
+  }
+
+  @media print {
+    div.container {
+      width: 100vw;
+      height: 100vh;
+      page-break-after: always;
+    }
+
+    div.container:last-child {
+      page-break-after: avoid;
+    }
+  }
+
+
 div.slide {
 	display: flex;
     flex-direction: column;
@@ -61,13 +126,45 @@ div.slide {
 div.title {
     background: white;
     color: black;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    padding-left: 0.5em;
 
     h1 {
         font-family: $headlineFont;
         font-weight: bold;
         font-size: 3em;
+        order: 3;
+        margin: 0;
     }
+
+  /* First spacer */
+  div.spacer:nth-child(1) {
+    flex-grow: 2;
+    order: 1;
+  }
+
+  /* First p in slot */
+  p:nth-child(3) {
+    order: 2;
+  }
+
+  /* Last spacer */
+  div.spacer {
+    flex-grow: 1;
+    order: 4;
+  }
+
+  /* Second p in slot */
+  p:nth-child(4) {
+    order: 5;
+    font-size: 0.7em;
+  }
 }
+
 
 /* Section */
 div.section {
