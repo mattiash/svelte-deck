@@ -41,7 +41,7 @@ Some text that is very long so that it stretches over two lines at least
 
 ### Picture this
 
-![img](https://picsum.photos/400/600)
+![img](https://picsum.photos/800/200)
 
 ---
 

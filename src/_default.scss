@@ -1,65 +1,10 @@
-$primary1: #0055ff;
-$primary1_light: #b2ccff;
-$primary2: #0ae6be;
-$primary2_light: #b6f8ec;
-
-$headlineFont: "Rockwell";
-$bodyFont: "Gill sans";
-
-body {
-	font-family: $bodyFont;
-    font-size: 48px;
-    color: #444444
-}
-
 div.slide {
 	background-image: linear-gradient( #e5e5e5 0%, #f0f0f0 16%, #ffffff 100%);
-
-    h3 {
-        font-family: $headlineFont;
-        font-size: 72px;
-        font-weight: bold;
-        color: $primary1;
-    }
-} 
+}
 
 div.title {
     background: linear-gradient(90deg, $primary1 50%, $primary2);
     color: white;
-
-    h1 {
-        font-family: $headlineFont;
-        font-weight: bold;
-        color: white;
-        font-size: 3em;
-    }
-}
-
-div.section {
-    width: 100%;
-    height: 100%;
-    background-size: 100% 100%;
-    padding-left: 1em;
-
-    h2 {
-        font-family: $headlineFont;
-        word-spacing: -10%;
-        font-weight: bold;
-        font-size: 3em;
-        line-height: 100%;
-  }
-
-  div.d2 {
-    height: 100%;
-    position: relative;
-  }
-
-  div.d3 {
-    margin: 0;
-    position: absolute;
-    top: 60%;
-    transform: translateY(-50%);
-  }
 }
 
 div.section.blue {
@@ -70,36 +15,4 @@ div.section.blue {
 div.section.green {
     background-color: $primary2_light;
     color: $primary2;
-}
-
-blockquote {
-	font-family: $bodyFont;
-	font-style: italic;
-	text-align: center;
-}
-
-p.comment {
-    display: none;
-}
-
-.comment {
-    div.title {
-    	background-image: linear-gradient( #e5e5e5 0%, #f0f0f0 16%, #ffffff 100%);
-    }
-
-    div.slide {
-        justify-content: normal;
-        align-items: start;
-
-        * {
-            display: none;
-        }
-
-        p.comment {
-            display: flex;
-            order: 1;
-            margin: 0.2em 1em;
-            text-align: left;
-        }
-    }
 }

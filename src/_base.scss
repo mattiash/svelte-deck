@@ -1,0 +1,171 @@
+$primary1: #0055ff;
+$primary1_light: #b2ccff;
+$primary2: #0ae6be;
+$primary2_light: #b6f8ec;
+
+$headlineFont: "Rockwell";
+$bodyFont: "Gill sans";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	overflow: hidden;
+}
+
+body {
+	font-family: $bodyFont;
+    font-size: 48px;
+    color: #444444
+}
+
+/* Slide */
+div.slide {
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+
+    > * {
+        flex-grow: 0;
+    }
+
+    > p {
+        margin-left: 1em;
+        margin-right: 1em;
+        text-align: center;
+    }
+
+    > h3 {
+        margin-top: 0.5em;
+        margin-bottom: 0;
+        text-align: center;
+        flex-grow: 0;
+    }
+
+    h3 {
+        font-family: $headlineFont;
+        font-size: 72px;
+        font-weight: bold;
+        color: $primary1;
+    }
+} 
+
+/* Title */
+div.title {
+    background: white;
+    color: black;
+
+    h1 {
+        font-family: $headlineFont;
+        font-weight: bold;
+        font-size: 3em;
+    }
+}
+
+/* Section */
+div.section {
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    padding-left: 1em;
+
+    h2 {
+        font-family: $headlineFont;
+        word-spacing: -10%;
+        font-weight: bold;
+        font-size: 3em;
+        line-height: 100%;
+  }
+
+  div.d2 {
+    height: 100%;
+    position: relative;
+  }
+
+  div.d3 {
+    margin: 0;
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+  }
+}
+
+/* Slide content */
+ul,p,blockquote {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0;
+}
+
+li {
+	line-height: 150%;
+}
+
+blockquote {
+	font-family: $bodyFont;
+	font-style: italic;
+	text-align: center;
+}
+
+/* Image */
+div.image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    flex-grow: 10;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    width: 98vw;
+
+    :last-child {
+        margin-bottom: 0.5em;
+  }
+}
+
+/* Comments, a.k.a Speaker Notes */
+p.comment {
+    display: none;
+}
+
+.comment {
+    div.title {
+    	background-image: linear-gradient( #e5e5e5 0%, #f0f0f0 16%, #ffffff 100%);
+    }
+
+    div.slide {
+        justify-content: normal;
+        align-items: start;
+
+        * {
+            display: none;
+        }
+
+        p.comment {
+            display: flex;
+            order: 1;
+            margin: 0.2em 1em;
+            text-align: left;
+        }
+    }
+}
+
+/* Overview mode */
+body.overview {
+	overflow: visible;
+}
+
+/* Print */
+@media print {
+	body {
+		overflow: visible;
+	}
+}
