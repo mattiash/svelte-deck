@@ -43,7 +43,6 @@
   class:right={!$overview && $activeSlide < num}
   class:visible={!$overview && $activeSlide === num}
   class:selected={$overview && $activeSlide === num}
-  class:overview={$overview}
   class:animate={$animate}
   style={$overview ? `transform: ${transform}` : ''}
   on:click={click}
