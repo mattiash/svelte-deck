@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@dishuostec/rollup-plugin-sass": "^1.2.3",
+    "prettier": "^2.0.5",
     "puppeteer": "^2.0.0",
     "sass": "^1.26.5",
     "sirv-cli": "^0.4.5"

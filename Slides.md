@@ -1,4 +1,3 @@
-
 # Svelte-deck
 
 Mattias Holmlund
@@ -15,9 +14,9 @@ Mattias Holmlund
 
 Some text that is very long so that it stretches over two lines at least
 
-- Bullet
-- Bullet
-- Bullet
+-   Bullet
+-   Bullet
+-   Bullet
 
 :: Speaker note aka Comment
 
@@ -66,4 +65,3 @@ Some text that is very long so that it stretches over two lines at least
 ### Picture this
 
 ![img](https://picsum.photos/400/600)
-

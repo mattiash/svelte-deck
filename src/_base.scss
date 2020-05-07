@@ -3,99 +3,98 @@ $primary1_light: #b2ccff;
 $primary2: #0ae6be;
 $primary2_light: #b6f8ec;
 
-$headlineFont: "Rockwell";
-$bodyFont: "Gill sans";
+$headlineFont: 'Rockwell';
+$bodyFont: 'Gill sans';
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-	margin: 0;
-	overflow: hidden;
+    margin: 0;
+    overflow: hidden;
 }
 
 body {
-	font-family: $bodyFont;
+    font-family: $bodyFont;
     font-size: 48px;
-    color: #444444
+    color: #444444;
 }
 
 /* Slide */
 
-  div.container.overview {
+div.container.overview {
     box-sizing: content-box;
     position: relative;
     box-shadow: 20px 15px 8px #888;
     border: 8px solid #888;
     cursor: pointer;
-  }
+}
 
-  div.container.overview.selected {
+div.container.overview.selected {
     border: 8px solid red;
-  }
+}
 
-  @media screen {
+@media screen {
     div.container {
-      width: 100vw;
-      height: 100vh;
+        width: 100vw;
+        height: 100vh;
     }
 
     div.container {
-      position: absolute;
-      top: 0;
-      left: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 
     div.container.animate {
-      transition: transform 0.4s;
+        transition: transform 0.4s;
     }
     .left {
-      transform: translateX(-100%);
+        transform: translateX(-100%);
     }
     .right {
-      transform: translateX(100%);
+        transform: translateX(100%);
     }
     .visible {
-      transform: translateX(0);
+        transform: translateX(0);
     }
-  }
+}
 
-  @page {
+@page {
     margin: 1cm;
     size: landscape;
-  }
+}
 
-  @page :footer {
+@page :footer {
     display: none;
-  }
+}
 
-  @page :header {
+@page :header {
     display: none;
-  }
+}
 
-  @media print {
+@media print {
     div.container {
-      width: 100vw;
-      height: 100vh;
-      page-break-after: always;
+        width: 100vw;
+        height: 100vh;
+        page-break-after: always;
     }
 
     div.container:last-child {
-      page-break-after: avoid;
+        page-break-after: avoid;
     }
-  }
-
+}
 
 div.slide {
-	display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
-	align-items: center;
-	height: 100%;
-	width: 100%;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 
     > * {
         flex-grow: 0;
@@ -120,7 +119,7 @@ div.slide {
         font-weight: bold;
         color: $primary1;
     }
-} 
+}
 
 /* Title */
 div.title {
@@ -141,30 +140,29 @@ div.title {
         margin: 0;
     }
 
-  /* First spacer */
-  div.spacer:nth-child(1) {
-    flex-grow: 2;
-    order: 1;
-  }
+    /* First spacer */
+    div.spacer:nth-child(1) {
+        flex-grow: 2;
+        order: 1;
+    }
 
-  /* First p in slot */
-  p:nth-child(3) {
-    order: 2;
-  }
+    /* First p in slot */
+    p:nth-child(3) {
+        order: 2;
+    }
 
-  /* Last spacer */
-  div.spacer {
-    flex-grow: 1;
-    order: 4;
-  }
+    /* Last spacer */
+    div.spacer {
+        flex-grow: 1;
+        order: 4;
+    }
 
-  /* Second p in slot */
-  p:nth-child(4) {
-    order: 5;
-    font-size: 0.7em;
-  }
+    /* Second p in slot */
+    p:nth-child(4) {
+        order: 5;
+        font-size: 0.7em;
+    }
 }
-
 
 /* Section */
 div.section {
@@ -179,37 +177,39 @@ div.section {
         font-weight: bold;
         font-size: 3em;
         line-height: 100%;
-  }
+    }
 
-  div.d2 {
-    height: 100%;
-    position: relative;
-  }
+    div.d2 {
+        height: 100%;
+        position: relative;
+    }
 
-  div.d3 {
-    margin: 0;
-    position: absolute;
-    top: 60%;
-    transform: translateY(-50%);
-  }
+    div.d3 {
+        margin: 0;
+        position: absolute;
+        top: 60%;
+        transform: translateY(-50%);
+    }
 }
 
 /* Slide content */
-ul,p,blockquote {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin: 0;
+ul,
+p,
+blockquote {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
 }
 
 li {
-	line-height: 150%;
+    line-height: 150%;
 }
 
 blockquote {
-	font-family: $bodyFont;
-	font-style: italic;
-	text-align: center;
+    font-family: $bodyFont;
+    font-style: italic;
+    text-align: center;
 }
 
 /* Image */
@@ -225,7 +225,7 @@ div.image {
 
     :last-child {
         margin-bottom: 0.5em;
-  }
+    }
 }
 
 /* Comments, a.k.a Speaker Notes */
@@ -235,7 +235,11 @@ p.comment {
 
 .comment {
     div.title {
-    	background-image: linear-gradient( #e5e5e5 0%, #f0f0f0 16%, #ffffff 100%);
+        background-image: linear-gradient(
+            #e5e5e5 0%,
+            #f0f0f0 16%,
+            #ffffff 100%
+        );
     }
 
     div.slide {
@@ -257,12 +261,12 @@ p.comment {
 
 /* Overview mode */
 body.overview {
-	overflow: visible;
+    overflow: visible;
 }
 
 /* Print */
 @media print {
-	body {
-		overflow: visible;
-	}
+    body {
+        overflow: visible;
+    }
 }
